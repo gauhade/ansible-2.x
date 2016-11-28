@@ -7,7 +7,7 @@ Given below is sample docker.yml playbook file. Here in this sample, we have spe
 ## playbook/docker.yml
 <pre>
 ---
-- name: Install and configure nginx
+- name: Install and configure docker
   hosts: docker
   become: yes
   roles:
