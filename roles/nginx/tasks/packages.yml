@@ -1,0 +1,12 @@
+---
+- name: Nginx Apt Install
+  apt:
+    name={{ item }}
+    state=installed
+    update-cache=yes
+  with_items:
+  - nginx-extras
+  - build-essential
+  tags:
+    - nginx
+

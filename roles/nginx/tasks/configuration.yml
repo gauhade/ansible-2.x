@@ -1,0 +1,19 @@
+---
+- name: Nginx Setup default nginx http configuration
+  template:
+    src=http.defaults.conf.j2
+    dest=/etc/nginx/conf.d/http.defaults.conf
+  notify: Nginx Reload
+  tags:
+    - nginx-config
+
+- name: Nginx Remove default nginx site
+  file:
+    path=/etc/nginx/sites-enabled/default
+    state=absent
+  notify: Nginx Reload
+  tags:
+    - nginx-config
+
+
+
